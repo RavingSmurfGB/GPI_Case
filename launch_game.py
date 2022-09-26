@@ -12,6 +12,8 @@ from datetime import datetime
 
 os.system("/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ snes '/home/pi/RetroPie/roms/snes/test.smc'")
 
+time.sleep(5)
+os.system("emulationstation")
 
 # We configure sudo nano /opt/retropie/configs/all/autostart.sh
 #/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ snes '/home/pi/RetroPie/roms/snes/test.smc'
