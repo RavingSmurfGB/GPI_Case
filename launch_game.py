@@ -1,5 +1,5 @@
 
-import subprocess, time
+import os, time
 from datetime import datetime
 
 
@@ -10,7 +10,7 @@ from datetime import datetime
 
 #time.sleep(2)
 
-subprocess.call(["/opt/retropie/supplementary/runcommand/runcommand.sh", "0","_SYS_", "snes", "'/home/pi/RetroPie/roms/snes/test.smc'"])
+os.system("/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ snes '/home/pi/RetroPie/roms/snes/test.smc'")
 
 
 # We configure sudo nano /opt/retropie/configs/all/autostart.sh
