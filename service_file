@@ -1,0 +1,14 @@
+#sudo nano /etc/systemd/system/launch_game.service
+
+
+[Unit]
+Description=Launch game on startup
+After=multi-user.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/python3 /home/pi/launch_game.py
+
+[Install]
+WantedBy=multi-user.target
