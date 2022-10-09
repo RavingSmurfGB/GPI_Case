@@ -5,6 +5,8 @@ To enable enter this file /opt/retropie/configs/all/autostart.sh
 - emulationstation #auto
 + python /home/pi/GPI_Case/client.py
 
+Also configure exec permissions for launch_emulationstation.sh launch_game.sh and client.py
+
 The workflow should be:
 
 1. By Defualt on startup a game should launch and not alow the user to exit.
