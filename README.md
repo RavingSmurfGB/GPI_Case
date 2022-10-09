@@ -1,7 +1,9 @@
 # GPI_Case
  A play through the retropie system
 
-
+To enable enter this file /opt/retropie/configs/all/autostart.sh
+- emulationstation #auto
++ python /home/pi/GPI_Case/client.py
 
 The workflow should be:
 
