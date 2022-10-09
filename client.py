@@ -10,14 +10,14 @@ with open("/home/pi/GPI_Case/save_state.txt") as file: # Use file to refer to th
 
     if data == "normal_boot":
         ' launch emulation station shell script and hang'
-        os.system("./home/pi/GPI_Case/launch_game.sh")
+        os.system("/home/pi/GPI_Case/launch_game.sh")
         while True:
             time.sleep(1)
         pass
 
 
     elif data == "lock_boot":
-        os.system("./home/pi/GPI_Case/launch_emulationstation.sh")
+        os.system("/home/pi/GPI_Case/launch_emulationstation.sh")
         'launch shell script with the following and proceed'
         # Also change controlls - but controls only reload with reboot....
         #/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ snes '/home/pi/RetroPie/roms/snes/The Legend of Zelda - A Link to the Past (U) [!].smc'
@@ -49,3 +49,6 @@ while True: # Await code input
 
 ##### We ADD THIS line and remove emulation station to boot into a game
 #/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ snes '/home/pi/RetroPie/roms/snes/The Legend of Zelda - A Link to the Past (U) [!].smc'
+
+
+#ExecStart=-/usr/bin/agetty --skip-login --login-options "-f pi" %I 38400 linux
