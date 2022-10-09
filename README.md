@@ -13,11 +13,16 @@ The workflow should be:
 
 Usefull information:
 
-CHANGING THE LAUNCHER SETTINGS CAN BE DONE VIA
+CHANGING THE LAUNCHER SETTINGS CAN BE DONE VIA - Can also start the python file for this script
 sudo nano /opt/retropie/configs/all/autostart.sh
 
+
+perhaps save what start state should be in a file somewehre
 
 
 Investigate controller stuffs:
          /opt/retropie/configs/all/retroarch-joypads/* # This one in game
         /home/pi/.emulationstation/es_input.cfg # this one in menu
+
+
+
