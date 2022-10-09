@@ -17,7 +17,7 @@ with open("save_state.txt") as file: # Use file to refer to the file object
 
 
     elif data == "lock_boot":
-        os.system("launch_emulationstation.sh")
+        os.system("./launch_emulationstation.sh")
         'launch shell script with the following and proceed'
         # Also change controlls - but controls only reload with reboot....
         #/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ snes '/home/pi/RetroPie/roms/snes/The Legend of Zelda - A Link to the Past (U) [!].smc'
