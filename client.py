@@ -5,11 +5,17 @@ from inputs import get_gamepad
 #Get Save State 
 with open("save_state.txt") as file: # Use file to refer to the file object
 
-   data = file.read()
+    data = file.read()
 
-   'if data = normtal_boot'
-    # Launch normal boot
-    'elif data = lock_boot'
+    if data == "normal_boot":
+        ' launch emulation station shell script and hang'
+        pass
+        # Launch normal boot
+    elif data == "lock_boot":
+        'launch shell script with the following and proceed'
+        # Also change controlls - but controls only reload with reboot....
+        #/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ snes '/home/pi/RetroPie/roms/snes/The Legend of Zelda - A Link to the Past (U) [!].smc'
+        pass
     #Launch game and change hotkey in /opt/retropie/configs/all/retroarch/autoconfig To ensure user cannot exit out of game
 
 
