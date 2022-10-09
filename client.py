@@ -39,13 +39,13 @@ while True: # Await code input
 
 #1 Use threading to only capture gamepad events 
 
-inside cat /opt/retropie/configs/all/autostart.sh
+#inside cat /opt/retropie/configs/all/autostart.sh
 
-while pgrep omxplayer >/dev/null; do sleep 1; done
+#while pgrep omxplayer >/dev/null; do sleep 1; done
 #/home/pi/scripts/themerandom.sh
-bash /opt/retropie/configs/imp/boot.sh > /dev/null 2>&1 & #auto
-emulationstation #auto
+#bash /opt/retropie/configs/imp/boot.sh > /dev/null 2>&1 & #auto
+#emulationstation #auto
 
 
 ##### We ADD THIS line and remove emulation station to boot into a game
-/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ snes '/home/pi/RetroPie/roms/snes/The Legend of Zelda - A Link to the Past (U) [!].smc'
+#/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ snes '/home/pi/RetroPie/roms/snes/The Legend of Zelda - A Link to the Past (U) [!].smc'
