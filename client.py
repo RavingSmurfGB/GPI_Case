@@ -2,14 +2,15 @@ from inputs import get_gamepad
 import os, time
 
 
-
-
 #ISSUES
 #
 # Turning the system off from the lock_boot state will launch into emulation station or terminal
 #   Find a way to detect the button turn off and use that instead of the hang to fully shutdown...
 #       The system uses a safe shutdown script which may be usefull in figuring this out
 #       https://github.com/RetroFlag/retroflag-picase
+
+
+
 
 def file_handle(path, *data): 
     # This function handles reading and writing of files
@@ -49,26 +50,27 @@ if state == "normal_boot":
 
 
 elif state == "lock_boot":
+    #  If the save_state.txt returns "lock_boot" we will launch a game and constantly check for a key combination to change the next boot
     os.system("/home/pi/GPI_Case/launch_game.sh")
-    'launch shell script with the following and proceed'
+
+    while True: # Await code input
+        key_combo = [] # Up, Up, Down, Down, Left, Right, Left, Right, O, X.
+        event_list = []
+        events = get_gamepad()
+        for event in events:
 
 
-while True: # Await code input
-    key_combo = [] # Up, Up, Down, Down, Left, Right, Left, Right, O, X.
-    event_list = []
-    events = get_gamepad()
-    for event in events:
+            if len(event_list) > 9:
+                event_list.pop(0)
 
 
-        if len(event_list) > 9:
-            event_list.pop(0)
+            event_list.append(event) #Change the event to be something proper....
+            print(event.ev_type, event.code, event.state)
+
+            if key_combo in event_list:
+                #change the boot stuffs...`
 
 
-        event_list.append(event) #Change the event to be something proper....
-        print(event.ev_type, event.code, event.state)
-
-        if key_combo in event_list:
-            #change the boot stuffs...
 
 #inside cat /opt/retropie/configs/all/autostart.sh
 
