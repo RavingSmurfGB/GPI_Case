@@ -11,7 +11,6 @@ import os, time
 
 
 
-
 def file_handle(path, *data): 
     # This function handles reading and writing of files
     #   An example of reading could be:
@@ -51,24 +50,28 @@ if state == "normal_boot":
 
 elif state == "lock_boot":
     #  If the save_state.txt returns "lock_boot" we will launch a game and constantly check for a key combination to change the next boot
+    #   We also need to change the control's for the hotkey back to normal : https://retropie.org.uk/docs/RetroArch-Configuration/!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     os.system("/home/pi/GPI_Case/launch_game.sh")
 
     while True: # Await code input
-        key_combo = [] # Up, Up, Down, Down, Left, Right, Left, Right, O, X.
+        key_combo = [] # Up, Up, Down, Down, Left, Right, Left, Right, O, X.     # Convert to get_gamepad() style !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
         event_list = []
+
         events = get_gamepad()
-        for event in events:
+        for event in events: #
 
 
-            if len(event_list) > 9:
-                event_list.pop(0)
+            if len(event_list) > 9: # If the event_list is greater than 10,
+                event_list.pop(0) # We remove the first list item
+                # This is because the key_combo is 10 entries long
 
 
-            event_list.append(event) #Change the event to be something proper....
+            event_list.append(event) #Change the event to be something proper!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             print(event.ev_type, event.code, event.state)
 
             if key_combo in event_list:
                 #change the boot stuffs...`
+                # change the hotkey to normal
 
 
 
