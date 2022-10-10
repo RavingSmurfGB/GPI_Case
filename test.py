@@ -1,22 +1,48 @@
-import time, os
 
-with open("save_state.txt") as file: # Use file to refer to the file object
+from genericpath import exists
+
+
+def file_handle(path, *data):
+    if len(data) == 0: # This checks if the tuple data is empty
+        mode = "r"
+    else:
+        mode = "w"
+   
+
+    with open(path, mode) as file:
+        if len(data) == 1:
+            file.write(data[0])
+        else:
+            #print(file.read())
+            return file.read()
+
+
+de_path = "GPI_Case/save_state.txt"
+
+
+print(file_handle(de_path))
+
+
+#file_handle(de_path, "HEY")
+
+#file_handle(de_path)
+
+'''
+with open("GPI_Case/save_state.txt") as file: # Use file to refer to the file object
 
     data = file.read()
 
     print(data)
 
-    if data == "normal_boot":
-        ' launch emulation station shell script and hang'
-        os.system("./launch_game.sh")
-        while True:
-            time.sleep(1)
-        pass
+with open("GPI_Case/save_state.txt", "w") as file: # Use file to refer to the file object
+    file.write("hey")
 
+    
 
-    elif data == "lock_boot":
-        os.system("./launch_emulationstation.sh")
-        'launch shell script with the following and proceed'
-        # Also change controlls - but controls only reload with reboot....
-        #/opt/retropie/supplementary/runcommand/runcommand.sh 0 _SYS_ snes '/home/pi/RetroPie/roms/snes/The Legend of Zelda - A Link to the Past (U) [!].smc'
-        pass
+with open("GPI_Case/save_state.txt") as file: # Use file to refer to the file object
+
+    data = file.read()
+
+    print(data)
+
+'''

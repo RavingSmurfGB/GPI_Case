@@ -1,1 +1,1 @@
-lock_boot
+normal_boot
