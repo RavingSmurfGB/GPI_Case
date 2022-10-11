@@ -72,6 +72,7 @@ elif state == "lock_boot":
             if key_combo in event_list:
                 #change the boot stuffs...`
                 # change the hotkey to normal
+                pass
 
 
 
