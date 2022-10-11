@@ -1,6 +1,6 @@
 from inputs import get_gamepad
 
-
+# This python script will monitor the controller in built into the GPI case; translate the output into a readable format; print the translated output and store it in button_output.txt
 
 def write_file(data, mode):
 
@@ -35,7 +35,7 @@ while True:
                 for translation, raw_button in keys.items():
                     if raw_button == [event.code, event.state]:
                         print(translation)
-                        write_file(translation)
+                        write_file(translation, "a")
 
 #### D PAD
 # UP - ['ABS_Y', -32768]
