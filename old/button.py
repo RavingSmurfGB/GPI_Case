@@ -16,4 +16,4 @@ events = get_gamepad()
 for event in events: #
 
     print(event.ev_type, event.code, event.state)
-    write_file(event.ev_type, event.code, event.state)
+    write_file(str(event.ev_type, event.code, event.state))
