@@ -14,7 +14,7 @@ while True:
     events = get_gamepad()
     for event in events: #
         if event.ev_type == "Absolute":
-            if event.code == 0 or event.code == -1:
+            if event.state != 0 or event.state != -1:
                 event_list = [event.code, event.state]
 
                 print(event_list)
