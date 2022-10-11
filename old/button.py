@@ -13,7 +13,7 @@ write_file("", "w")
 while True:
     events = get_gamepad()
     for event in events: #
-        if event.code == "SYN_REPORT":
+        if event.code != "SYN_REPORT":
             #if event.state != 0 or event.state != -1:
             event_list = [event.code, event.state]
 
