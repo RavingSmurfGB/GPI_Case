@@ -74,7 +74,7 @@ elif state == "lock_boot":
     os.system("/home/pi/GPI_Case/launch_emulationstation.sh")
 
     while True: # Await code input
-        key_combo = [] # Up, Up, Down, Down, Left, Right, Left, Right, O, X.     # Convert to get_gamepad() style !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+        key_combo = ["UP", "UP", "DOWN", "DOWN"] # Up, Up, Down, Down, Left, Right, Left, Right, O, X.     # Convert to get_gamepad() style !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
         event_list = []
 
         events = get_gamepad()
@@ -94,7 +94,10 @@ elif state == "lock_boot":
                             if key_combo in event_list:
                                 #change the boot stuffs...`
                                 # change the hotkey to normal
+                                os.system("/home/pi/GPI_Case/launch_game.sh")
                                 pass
+
+                        
 
             
 
