@@ -11,6 +11,25 @@ import os, time
 
 
 
+
+
+
+keys = {# This dictionary provides translation for inputs.get_gamepad() events into a readable version
+    "UP" : ['ABS_Y', -32768],
+    "LEFT" : ['ABS_X', -32768],
+    "RIGHT" : ['ABS_X', 32767],
+    "DOWN" : ['ABS_Y', 32767],
+    "X" : ['BTN_NORTH', 1],
+    "Y" : ['BTN_WEST', 1],
+    "B" : ['BTN_SOUTH', 1],
+    "A" : ['BTN_EAST', 1],
+    "SELECT" : ['BTN_SELECT', 1],
+    "START" : ['BTN_START', 1],
+    "LTRIGGER" : ['BTN_TL', 1],
+    "RTRIGGER" : ['BTN_TR', 1]
+}
+
+
 def file_handle(path, *data): 
     # This function handles reading and writing of files
     #   An example of reading could be:
@@ -60,20 +79,24 @@ elif state == "lock_boot":
 
         events = get_gamepad()
         for event in events: #
+            if event.code != "SYN_REPORT":
+                if event.state != 0 and event.state != -1:
+                    for translation, raw_button in keys.items():
+                        if raw_button == [event.code, event.state]:
 
+                            if len(event_list) > 9: # If the event_list is greater than 10,
+                                event_list.pop(0) # We remove the first list item
+                                # This is because the key_combo is 10 entries long
 
-            if len(event_list) > 9: # If the event_list is greater than 10,
-                event_list.pop(0) # We remove the first list item
-                # This is because the key_combo is 10 entries long
+                            print(translation)
+                            event_list.append(translation,)
 
+                            if key_combo in event_list:
+                                #change the boot stuffs...`
+                                # change the hotkey to normal
+                                pass
 
-            event_list.append(event) #Change the event to be something proper!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            print(event.ev_type, event.code, event.state)
-
-            if key_combo in event_list:
-                #change the boot stuffs...`
-                # change the hotkey to normal
-                pass
+            
 
 
 
