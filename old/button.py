@@ -14,6 +14,6 @@ def write_file(data):
 
 events = get_gamepad()
 for event in events: #
-
-    print(event.ev_type, event.code, event.state)
-    write_file(str(event.ev_type, event.code, event.state))
+    event_list = [event.ev_type, event.code, event.state]
+    print(event_list)
+    write_file(event_list)
