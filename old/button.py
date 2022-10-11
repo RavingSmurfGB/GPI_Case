@@ -26,6 +26,7 @@ keys = {# This dictionary provides translation for
 }
 
 
+
 while True:
     events = get_gamepad()
     for event in events: #
