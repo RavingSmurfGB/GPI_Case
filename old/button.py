@@ -35,15 +35,7 @@ while True:
                 for translation, raw_button in keys.items():
                     if raw_button == [event.code, event.state]:
                         print(translation)
-                event_list = [event.code, event.state]
-
-                print(event_list)
-                write_file(event_list, "a")
-
-
-
-
-
+                        write_file(translation)
 
 #### D PAD
 # UP - ['ABS_Y', -32768]
