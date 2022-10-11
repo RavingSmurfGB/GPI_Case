@@ -2,6 +2,16 @@ from inputs import get_gamepad
 import os, time
 
 
+
+#PROGRESS
+#
+# This file chooses what to launch into ------------ DONE
+#   Based on save_state.txt ------------------------ DONE
+# Detect keys -------------------------------------- DONE
+#
+# Changes input controlls based on save_state
+#   Fine tune logic for this
+
 #ISSUES
 #
 # Turning the system off from the lock_boot state will launch into emulation station or terminal
@@ -74,7 +84,7 @@ elif state == "lock_boot":
     os.system("/home/pi/GPI_Case/launch_emulationstation.sh")
 
     while True: # Await code input
-        key_combo = ["UP", "UP", "DOWN", "DOWN"] # Up, Up, Down, Down, Left, Right, Left, Right, O, X.     # Convert to get_gamepad() style !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1
+        key_combo = ["UP", "UP", "DOWN", "DOWN"] # Up, Up, Down, Down, Left, Right, Left, Right, O, X. 
         event_list = []
 
         events = get_gamepad()
@@ -94,7 +104,8 @@ elif state == "lock_boot":
                             if key_combo in event_list:
                                 #change the boot stuffs...`
                                 # change the hotkey to normal
-                                os.system("/home/pi/GPI_Case/launch_game.sh")
+                                file_handle("/home/pi/GPI_Case/YAY.txt", "we did it")
+                                #os.system("/home/pi/GPI_Case/launch_game.sh")
                                 pass
 
                         
