@@ -12,6 +12,6 @@ write_file("", "w")
 while True:
     events = get_gamepad()
     for event in events: #
-        event_list = [event.ev_type, event.code, event.state]
+        event_list = [event.ev_type, event.code, event.state, "\n"]
         print(event_list)
         write_file(event_list, "a")
