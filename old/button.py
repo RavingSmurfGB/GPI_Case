@@ -10,7 +10,7 @@ def write_file(data, mode):
 
 write_file("", "w")
 
-keys = {# This dictionary provides translation for 
+keys = {# This dictionary provides translation for inputs.get_gamepad() events into a readable version
     "UP" : ['ABS_Y', -32768],
     "LEFT" : ['ABS_X', -32768],
     "RIGHT" : ['ABS_X', 32767],
