@@ -14,12 +14,14 @@ while True:
     events = get_gamepad()
     for event in events: #
         if event.ev_type == "Absolute":
-            if event.state != 0 or event.state != -1:
-                event_list = [event.code, event.state]
+            #if event.state != 0 or event.state != -1:
+            event_list = [event.code, event.state]
 
-                print(event_list)
-                write_file(event_list, "a")
+            print(event_list)
+            write_file(event_list, "a")
 
-# 'Absolute', 'ABS_Y', -32768]
-#-32768 = left
-#32767 = right
+# UP - ['ABS_Y', -32768]
+# LEFT - ['ABS_X', -32768]
+# RIGHT - ['ABS_X', 32767]
+# DOWN - ['ABS_Y', 32767]
+
