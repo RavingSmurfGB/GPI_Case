@@ -32,7 +32,7 @@ while True:
     for event in events: #
         if event.code != "SYN_REPORT":
             if event.state != 0 and event.state != -1:
-                for translation, raw_button, test in keys.items():
+                for translation, raw_button in keys.items():
                     if raw_button == [event.code, event.state]:
                         print(translation)
                 event_list = [event.code, event.state]
