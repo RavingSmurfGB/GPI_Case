@@ -1,4 +1,7 @@
 # GPI_Case
+
+This repository documents my efforts to modify a Raspbery pi to run with the Retro Flag GPI case
+
  A play through the retropie system
 
 To enable enter this file /opt/retropie/configs/all/autostart.sh
